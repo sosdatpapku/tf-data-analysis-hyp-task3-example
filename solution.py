@@ -10,7 +10,7 @@ def solution(x: np.array, y: np.array) -> bool: # Одна или две выб�
     experimental_group = y
     p_value_control = shapiro(control_group)
     p_value_experimental = shapiro(experimental_group)
-    t_statistic, p_value = ttest_ind(control_group, experimental_group, equal_var=False)
+    t_statistic, p_value = ttest_ind(control_group, experimental_group, equal_var=False, alternative='greater')
     alpha = 0.06
     if p_value < alpha:
         return True
